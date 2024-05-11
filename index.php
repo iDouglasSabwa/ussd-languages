@@ -1,0 +1,45 @@
+<?php 
+//Echo response back to the API
+header('Content-type: text/plain');
+
+//Read POST variables from the API
+$sessionId = $_POST['sessionId'];
+$networkCode = $_POST['networkCode'];
+$serviceCode = $_POST['serviceCode'];
+$phoneNumber = ltrim($_POST['phoneNumber']);
+// $phoneNumber = ['phoneNumber'];
+$text = $_POST['text'];
+// Initialize default response
+$response = "";
+
+// Check if the text is empty to start a new session
+if ($text == "") {
+    $response = "CON Computer Languages Frameworks. Choose an option: \n1. Java \n2. Python \n3. PHP \n4. JavaScript";
+} else {
+    // Split the text to handle user input
+    $textArray = explode('*', $text);
+
+    switch ($textArray[0]) {
+        case "1":
+            $response = "END Java Frameworks \n1. SpringBoot\n2. Apache Struts";
+            break;
+        case "2":
+            $response = "END Python Frameworks. \n1. Flask\n2. Django \n3. PyTorch";
+            break;
+        case "3":
+            $response = "END PHP Frameworks. \n1. Laravel\n2. Symfony\n3. CodeIgniter";
+            break;
+        case "4":
+            $response = "END JavaScript Frameworks. \n1. NodeJS\n2. ReactJS\n3. TypeScript";
+            break;    
+        default:
+            $response = "END Invalid input";
+            break;
+    }
+}
+
+echo $response;
+
+return mysqli_close($con);	
+
+; ?>
