@@ -14,7 +14,7 @@ $response = "";
 
 // Check if the text is empty to start a new session
 if ($text == "") {
-    $response = "CON Languages Frameworks: \n1. Java \n2. Python \n3. PHP \n4. JavaScript";
+    $response = "CON Language Frameworks: \n1. Java \n2. Python \n3. PHP \n4. JavaScript";
 } else {
     // Split the text to handle user input
     $textArray = explode('*', $text);
@@ -39,7 +39,5 @@ if ($text == "") {
 }
 
 echo $response;
-
-return mysqli_close($con);	
 
 ; ?>
