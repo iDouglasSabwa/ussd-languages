@@ -7,10 +7,7 @@ $sessionId = $_POST['sessionId'];
 $networkCode = $_POST['networkCode'];
 $serviceCode = $_POST['serviceCode'];
 $phoneNumber = ltrim($_POST['phoneNumber']);
-// $phoneNumber = ['phoneNumber'];
 $text = $_POST['text'];
-// Initialize default response
-$response = "";
 
 // Check if the text is empty to start a new session
 if ($text == "") {
